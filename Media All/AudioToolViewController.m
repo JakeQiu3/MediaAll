@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    加载本地音效文件
     [self  playSoundEffect:@"msgTritone.caf"];
 }
 /**
