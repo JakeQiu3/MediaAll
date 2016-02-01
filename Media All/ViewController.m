@@ -28,8 +28,8 @@
 }
 
 - (void)initData {
-    _dataArray = [[NSArray alloc] initWithObjects:@"Notification（本地推送）",@"Notification (远程推送通知)",@"", nil];
-    _classArray = [[NSArray alloc] initWithObjects:@"LocalNotificationViewController",@"RemoteNotificationViewController",@"", nil];
+    _dataArray = [[NSArray alloc] initWithObjects:@"audio（音频）",@"video（视频）",@"photography（拍照）", nil];
+    _classArray = [[NSArray alloc] initWithObjects:@"AudioViewController",@"VideoViewController",@"PhotoGraphyViewController", nil];
 }
 
 - (void)setUI {
