@@ -1,0 +1,6 @@
+在iOS中音频播放从形式上可以分为音效播放和音乐播放：分别使用AudioToolbox.framework和AVFoundation.framework
+1.音效：
+音频播放时间不能超过30s
+数据必须是PCM或者IMA4格式
+音频文件必须打包成.caf、.aif、.wav中的一种（注意这是官方文档的说法，实际测试发现一些.mp3也可以播放）
+2.
