@@ -13,12 +13,12 @@
 #define kMusicSinger @"刘若英"
 #define kMusicTitle @"原来你也在这里"
 @interface MusicViewController ()<AVAudioPlayerDelegate>
-@property (nonatomic, weak) AVAudioPlayer *audioPlayer;//播放器
-@property (nonatomic, weak) UIView *controlPanelView;//控制面板
-@property (nonatomic, weak) UILabel *singerLabel;//歌手名字
-@property (nonatomic, weak) UIButton *playOrPauseBtn;//播放/暂停按钮(如果tag为0认为是暂停状态，1是播放状态)
-@property (nonatomic, weak) UIProgressView *playProgress;//进度条
-@property (nonatomic, weak) NSTimer *timer;//进度更新定时器
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;//播放器
+@property (nonatomic, strong) UIView *controlPanelView;//控制面板
+@property (nonatomic, strong) UILabel *singerLabel;//歌手名字
+@property (nonatomic, strong) UIButton *playOrPauseBtn;//播放/暂停按钮(如果tag为0认为是暂停状态，1是播放状态)
+@property (nonatomic, strong) UIProgressView *playProgress;//进度条
+@property (nonatomic, strong) NSTimer *timer;//进度更新定时器
 
 @end
 
@@ -28,11 +28,17 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]beginReceivingRemoteControlEvents];
 }
+//当前控制器视图不显示时取消远程控制
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    //[self resignFirstResponder];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = kMusicSinger;
-    
+    self.title = kMusicTitle;
     [self setupUI];
 }
 
@@ -42,123 +48,71 @@
     imageV.image = [UIImage imageNamed:@"Ren'eLiu"];
     [self.view addSubview:imageV];
 //    底部版面控制器
-    UIView *controlPanelView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 200, self.view.bounds.size.width, 200)];
-    controlPanelView.backgroundColor = [UIColor blackColor];
-    controlPanelView.alpha = 0.5;
-    [self.view addSubview:controlPanelView];
-    _controlPanelView = controlPanelView;
+   _controlPanelView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 150, self.view.bounds.size.width, 150)];
+    _controlPanelView.backgroundColor = [UIColor blackColor];
+    _controlPanelView.alpha = 0.5;
+    [self.view addSubview:_controlPanelView];
+    
 //  歌手名字label
-    UILabel *singerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, 20, 20)];
-    singerLabel.text = kMusicSinger;
-    singerLabel.textColor = [UIColor whiteColor];
-    singerLabel.textAlignment = NSTextAlignmentLeft;
-    [_controlPanelView addSubview:singerLabel];
-    _singerLabel = singerLabel;
-//  进度条
-    UIProgressView *playProgress = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-    playProgress.frame = CGRectMake(0, 70, controlPanelView.frame.size.width, 1);
-    playProgress.progressTintColor = [UIColor blueColor];
-    playProgress.trackTintColor =[UIColor grayColor];
-    [_controlPanelView addSubview:playProgress];
-    _playProgress = playProgress;
-// button
-    UIButton *playOrPauseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    playOrPauseBtn.frame = CGRectMake((self.view.bounds.size.width- 50)*0.5, CGRectGetMaxY(_playProgress.frame)+5, 50, 50);
-    [playOrPauseBtn setImage:[UIImage imageNamed:@"playing_btn_play_n"] forState:UIControlStateNormal];
-    [playOrPauseBtn setImage:[UIImage imageNamed:@"playing_btn_play_h"] forState:UIControlStateHighlighted];
-    [playOrPauseBtn addTarget:self action:@selector(playOrPauseBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_controlPanelView addSubview:playOrPauseBtn];
-    _playOrPauseBtn = playOrPauseBtn;
-}
+   _singerLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 80, 20)];
+    _singerLabel.text = kMusicSinger;
+    _singerLabel.textColor = [UIColor whiteColor];
+    _singerLabel.textAlignment = NSTextAlignmentLeft;
+    [_controlPanelView addSubview:_singerLabel];
+//    进度条
+    _playProgress = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    _playProgress.frame = CGRectMake(0, 70, _controlPanelView.frame.size.width, 1);
+    _playProgress.progressTintColor = [UIColor blueColor];
+    _playProgress.trackTintColor =[UIColor grayColor];
+    [_controlPanelView addSubview:_playProgress];
+//    播放按钮
+    _playOrPauseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _playOrPauseBtn.frame = CGRectMake((self.view.bounds.size.width- 50)*0.5, CGRectGetMaxY(_playProgress.frame)+15, 50, 50);
+    _playOrPauseBtn.tag = 0;
+    [_playOrPauseBtn setImage:[UIImage imageNamed:@"playing_btn_play_n"] forState:UIControlStateNormal];
+    [_playOrPauseBtn setImage:[UIImage imageNamed:@"playing_btn_play_h"] forState:UIControlStateHighlighted];
+    [_playOrPauseBtn addTarget:self action:@selector(playOrPauseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_controlPanelView addSubview:_playOrPauseBtn];
 
--(NSTimer *)timer{
-    if (!_timer) {
-        _timer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgress) userInfo:nil repeats:true];
-    }
-    return _timer;
 }
 
 //点击button方法
 - (void)playOrPauseBtn:(UIButton *)btn {
-    
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
- #import "ViewController.h"
- #import <AVFoundation/AVFoundation.h>
- #define kMusicFile @"刘若英 - 原来你也在这里.mp3"
- #define kMusicSinger @"刘若英"
- #define kMusicTitle @"原来你也在这里"
- 
- @interface ViewController ()<AVAudioPlayerDelegate>
- 
- @property (nonatomic,strong) AVAudioPlayer *audioPlayer;//播放器
- @property (weak, nonatomic) IBOutlet UILabel *controlPanel; //控制面板
- @property (weak, nonatomic) IBOutlet UIProgressView *playProgress;//播放进度
- @property (weak, nonatomic) IBOutlet UILabel *musicSinger; //演唱者
- @property (weak, nonatomic) IBOutlet UIButton *playOrPause; //播放/暂停按钮(如果tag为0认为是暂停状态，1是播放状态)
- 
- @property (weak ,nonatomic) NSTimer *timer;//进度更新定时器
- 
- @end
- 
- @implementation ViewController
- 
- - (void)viewDidLoad {
- [super viewDidLoad];
- 
- [self setupUI];
- 
- }
- 
- /**
- *  显示当面视图控制器时注册远程事件
- *
- *  @param animated 是否以动画的形式显示
- */
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    //开启远程控制
-    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    //作为第一响应者
-    //[self becomeFirstResponder];
-}
-/**
- *  当前控制器视图不显示时取消远程控制
- *
- *  @param animated 是否以动画的形式消失
- */
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-    //[self resignFirstResponder];
+        if(btn.tag){
+            btn.tag=0;
+            [btn setImage:[UIImage imageNamed:@"playing_btn_play_n"] forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"playing_btn_play_h"] forState:UIControlStateHighlighted];
+            [self pause];
+        }else{
+            btn.tag=1;
+            [btn setImage:[UIImage imageNamed:@"playing_btn_pause_n"] forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"playing_btn_pause_h"] forState:UIControlStateHighlighted];
+            [self play];
+        }
 }
 
 /**
- *  初始化UI
+ *  播放音频
  */
--(void)setupUI{
-    self.title=kMusicTitle;
-    self.musicSinger.text=kMusicSinger;
-}
-
--(NSTimer *)timer{
-    if (!_timer) {
-        _timer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgress) userInfo:nil repeats:true];
+-(void)play{
+    if (![self.audioPlayer isPlaying]) {
+        [self.audioPlayer play];
+        self.timer.fireDate=[NSDate distantPast];//恢复定时器
     }
-    return _timer;
+}
+/**
+ *  暂停播放
+ */
+-(void)pause{
+    if ([self.audioPlayer isPlaying]) {
+        [self.audioPlayer pause];
+        self.timer.fireDate=[NSDate distantFuture];//暂停定时器，注意不能调用invalidate方法，此方法会取消，之后无法恢复
+
+    }
 }
 
-/**
- *  创建播放器
- *
- *  @return 音频播放器
- */
--(AVAudioPlayer *)audioPlayer{
+//创建播放器
+- (AVAudioPlayer *)audioPlayer {
     if (!_audioPlayer) {
         NSString *urlStr=[[NSBundle mainBundle]pathForResource:kMusicFile ofType:nil];
         NSURL *url=[NSURL fileURLWithPath:urlStr];
@@ -176,7 +130,7 @@
         //设置后台播放模式
         AVAudioSession *audioSession=[AVAudioSession sharedInstance];
         [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
-        [audioSession setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
+        //        [audioSession setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
         [audioSession setActive:YES error:nil];
         //添加通知，拔出耳机后暂停播放
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(routeChange:) name:AVAudioSessionRouteChangeNotification object:nil];
@@ -184,52 +138,23 @@
     return _audioPlayer;
 }
 
-/**
- *  播放音频
- */
--(void)play{
-    if (![self.audioPlayer isPlaying]) {
-        [self.audioPlayer play];
-        self.timer.fireDate=[NSDate distantPast];//恢复定时器
-    }
-}
-
-/**
- *  暂停播放
- */
--(void)pause{
-    if ([self.audioPlayer isPlaying]) {
-        [self.audioPlayer pause];
-        self.timer.fireDate=[NSDate distantFuture];//暂停定时器，注意不能调用invalidate方法，此方法会取消，之后无法恢复
+-(NSTimer *)timer{
+    if (!_timer) {
+         _timer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgress) userInfo:nil repeats:true];
         
     }
+    return _timer;
 }
-
-/**
- *  点击播放/暂停按钮
- *
- *  @param sender 播放/暂停按钮
- */
-- (IBAction)playClick:(UIButton *)sender {
-    if(sender.tag){
-        sender.tag=0;
-        [sender setImage:[UIImage imageNamed:@"playing_btn_play_n"] forState:UIControlStateNormal];
-        [sender setImage:[UIImage imageNamed:@"playing_btn_play_h"] forState:UIControlStateHighlighted];
-        [self pause];
-    }else{
-        sender.tag=1;
-        [sender setImage:[UIImage imageNamed:@"playing_btn_pause_n"] forState:UIControlStateNormal];
-        [sender setImage:[UIImage imageNamed:@"playing_btn_pause_h"] forState:UIControlStateHighlighted];
-        [self play];
-    }
-}
-
 /**
  *  更新播放进度
  */
 -(void)updateProgress{
+    
     float progress= self.audioPlayer.currentTime /self.audioPlayer.duration;
-    [self.playProgress setProgress:progress animated:true];
+//    保存
+    [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithFloat:progress]forKey:@"progress"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    [self.playProgress setProgress:progress animated:YES];
 }
 
 /**
@@ -254,6 +179,7 @@
         NSLog(@"%@:%@",key,obj);
     }];
 }
+//通知注销
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
@@ -265,9 +191,5 @@
     //根据实际情况播放完成可以将会话关闭，其他音频应用继续播放
     [[AVAudioSession sharedInstance]setActive:NO error:nil];
 }
-
-@end
-
- */
 
 @end
