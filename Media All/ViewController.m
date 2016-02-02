@@ -28,8 +28,8 @@
 }
 
 - (void)initData {
-    _dataArray = [[NSArray alloc] initWithObjects:@"audio（音效、音乐和录音）之音效",@"audio（音效、音乐和录音）之音乐",@"audio（音效、音乐和录音）之录音",@"video（视频）",@"photography（拍照）", nil];
-    _classArray = [[NSArray alloc] initWithObjects:@"AudioToolViewController",@"MusicViewController",@"RecordViewController",@"PhotoGraphyViewController", nil];
+    _dataArray = [[NSArray alloc] initWithObjects:@"audio（音效、音乐和录音）之音效",@"audio（音效、音乐和录音）之本地音乐",@"audio（音效、音乐和录音）之录音",@"audio（音效、音乐和录音）之多媒体音乐",@"audio（音效、音乐和录音）之音乐队列",@"", nil];
+    _classArray = [[NSArray alloc] initWithObjects:@"AudioToolViewController",@"MusicViewController",@"HHHViewController",@"MediaMusicViewController",@"AudioQueueServicesViewController", nil];
 }
 
 - (void)setUI {
