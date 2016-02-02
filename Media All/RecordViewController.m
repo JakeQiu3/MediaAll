@@ -7,7 +7,7 @@
 //
 
 #import "RecordViewController.h"
-
+#import <AVFoundation/AVFoundation.h>
 @interface RecordViewController ()
 
 @end

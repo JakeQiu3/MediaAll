@@ -24,6 +24,8 @@
 		731119381C5F5D5300BA29DE /* msgTritone.caf in Resources */ = {isa = PBXBuildFile; fileRef = 731119371C5F5D5300BA29DE /* msgTritone.caf */; };
 		7311193B1C5F60F000BA29DE /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7311193A1C5F60F000BA29DE /* MusicViewController.m */; };
 		7311193E1C5F618400BA29DE /* 刘若英 - 原来你也在这里.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7311193D1C5F618400BA29DE /* 刘若英 - 原来你也在这里.mp3 */; };
+		7358231E1C60718D00C42383 /* HHHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7358231D1C60718D00C42383 /* HHHViewController.m */; };
+		735823211C60736A00C42383 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735823201C60736A00C42383 /* RecordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,9 @@
 		731119391C5F60F000BA29DE /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
 		7311193A1C5F60F000BA29DE /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		7311193D1C5F618400BA29DE /* 刘若英 - 原来你也在这里.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "刘若英 - 原来你也在这里.mp3"; sourceTree = "<group>"; };
+		7358231D1C60718D00C42383 /* HHHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHHViewController.m; sourceTree = "<group>"; };
+		7358231F1C60719400C42383 /* HHHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHHViewController.h; sourceTree = "<group>"; };
+		735823201C60736A00C42383 /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,8 @@
 		731119001C5F434900BA29DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7358231F1C60719400C42383 /* HHHViewController.h */,
+				7358231D1C60718D00C42383 /* HHHViewController.m */,
 				7311190E1C5F434900BA29DE /* LaunchScreen.storyboard */,
 				731119111C5F434900BA29DE /* Info.plist */,
 				7311190C1C5F434900BA29DE /* Assets.xcassets */,
@@ -126,6 +133,7 @@
 				7311193A1C5F60F000BA29DE /* MusicViewController.m */,
 				731119311C5F596100BA29DE /* RecordViewController.h */,
 				731119321C5F596100BA29DE /* RecordViewController.m */,
+				735823201C60736A00C42383 /* RecordViewController.xib */,
 			);
 			name = "audio（音效、音乐和录音）";
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 				731119381C5F5D5300BA29DE /* msgTritone.caf in Resources */,
 				731119301C5F593A00BA29DE /* 声音大全.xml in Resources */,
 				7311190D1C5F434900BA29DE /* Assets.xcassets in Resources */,
+				735823211C60736A00C42383 /* RecordViewController.xib in Resources */,
 				7311193E1C5F618400BA29DE /* 刘若英 - 原来你也在这里.mp3 in Resources */,
 				7311190B1C5F434900BA29DE /* Main.storyboard in Resources */,
 			);
@@ -233,6 +242,7 @@
 				7311193B1C5F60F000BA29DE /* MusicViewController.m in Sources */,
 				731119231C5F451400BA29DE /* VideoViewController.m in Sources */,
 				731119181C5F437E00BA29DE /* ViewController.m in Sources */,
+				7358231E1C60718D00C42383 /* HHHViewController.m in Sources */,
 				731119261C5F452200BA29DE /* PhotoGraphyViewController.m in Sources */,
 				731119361C5F598A00BA29DE /* AudioToolViewController.m in Sources */,
 				731119051C5F434900BA29DE /* AppDelegate.m in Sources */,
