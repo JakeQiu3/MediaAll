@@ -14,7 +14,7 @@
 		7311190D1C5F434900BA29DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7311190C1C5F434900BA29DE /* Assets.xcassets */; };
 		731119101C5F434900BA29DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7311190E1C5F434900BA29DE /* LaunchScreen.storyboard */; };
 		731119181C5F437E00BA29DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731119171C5F437E00BA29DE /* ViewController.m */; };
-		731119231C5F451400BA29DE /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731119221C5F451400BA29DE /* VideoViewController.m */; };
+		731119231C5F451400BA29DE /* MKAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731119221C5F451400BA29DE /* MKAVPlayerViewController.m */; };
 		731119261C5F452200BA29DE /* PhotoGraphyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731119251C5F452200BA29DE /* PhotoGraphyViewController.m */; };
 		731119281C5F48EA00BA29DE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731119271C5F48EA00BA29DE /* AVFoundation.framework */; };
 		7311192E1C5F581D00BA29DE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7311192D1C5F581D00BA29DE /* AudioToolbox.framework */; };
@@ -27,6 +27,8 @@
 		7358231E1C60718D00C42383 /* HHHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7358231D1C60718D00C42383 /* HHHViewController.m */; };
 		735823231C607EB200C42383 /* RecordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735823221C607EB200C42383 /* RecordViewController.storyboard */; };
 		735823261C6087F300C42383 /* MediaMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735823251C6087F300C42383 /* MediaMusicViewController.m */; };
+		737E33021C63483600398296 /* MoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E33011C63483600398296 /* MoviePlayerViewController.m */; };
+		737E33041C6358C600398296 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737E33031C6358C600398296 /* AVKit.framework */; };
 		73FB817E1C60A8EE00135D69 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73FB817D1C60A8EE00135D69 /* CFNetwork.framework */; };
 		73FB81831C60A94C00135D69 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FB81821C60A94C00135D69 /* Reachability.m */; };
 		73FB81971C60A95B00135D69 /* audio_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73FB81851C60A95B00135D69 /* audio_queue.cpp */; };
@@ -60,8 +62,8 @@
 		731119111C5F434900BA29DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		731119171C5F437E00BA29DE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7311191A1C5F438E00BA29DE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		731119211C5F451400BA29DE /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
-		731119221C5F451400BA29DE /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		731119211C5F451400BA29DE /* MKAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKAVPlayerViewController.h; sourceTree = "<group>"; };
+		731119221C5F451400BA29DE /* MKAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKAVPlayerViewController.m; sourceTree = "<group>"; };
 		731119241C5F452200BA29DE /* PhotoGraphyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGraphyViewController.h; sourceTree = "<group>"; };
 		731119251C5F452200BA29DE /* PhotoGraphyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGraphyViewController.m; sourceTree = "<group>"; };
 		731119271C5F48EA00BA29DE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -80,6 +82,9 @@
 		735823221C607EB200C42383 /* RecordViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RecordViewController.storyboard; sourceTree = "<group>"; };
 		735823241C6087F300C42383 /* MediaMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaMusicViewController.h; sourceTree = "<group>"; };
 		735823251C6087F300C42383 /* MediaMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaMusicViewController.m; sourceTree = "<group>"; };
+		737E33001C63483600398296 /* MoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerViewController.h; sourceTree = "<group>"; };
+		737E33011C63483600398296 /* MoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerViewController.m; sourceTree = "<group>"; };
+		737E33031C6358C600398296 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		73FB817D1C60A8EE00135D69 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		73FB81811C60A94C00135D69 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		73FB81821C60A94C00135D69 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				737E33041C6358C600398296 /* AVKit.framework in Frameworks */,
 				73FB817E1C60A8EE00135D69 /* CFNetwork.framework in Frameworks */,
 				303D3F841C5FA3CD0083F275 /* MediaPlayer.framework in Frameworks */,
 				7311192E1C5F581D00BA29DE /* AudioToolbox.framework in Frameworks */,
@@ -138,6 +144,7 @@
 		731118F41C5F434900BA29DE = {
 			isa = PBXGroup;
 			children = (
+				737E33031C6358C600398296 /* AVKit.framework */,
 				73FB817D1C60A8EE00135D69 /* CFNetwork.framework */,
 				303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */,
 				7311192D1C5F581D00BA29DE /* AudioToolbox.framework */,
@@ -207,8 +214,10 @@
 		7311191C1C5F44E100BA29DE /* video（视频） */ = {
 			isa = PBXGroup;
 			children = (
-				731119211C5F451400BA29DE /* VideoViewController.h */,
-				731119221C5F451400BA29DE /* VideoViewController.m */,
+				731119211C5F451400BA29DE /* MKAVPlayerViewController.h */,
+				731119221C5F451400BA29DE /* MKAVPlayerViewController.m */,
+				737E33001C63483600398296 /* MoviePlayerViewController.h */,
+				737E33011C63483600398296 /* MoviePlayerViewController.m */,
 			);
 			name = "video（视频）";
 			sourceTree = "<group>";
@@ -360,7 +369,7 @@
 				7311193B1C5F60F000BA29DE /* MusicViewController.m in Sources */,
 				73FB81981C60A95B00135D69 /* audio_stream.cpp in Sources */,
 				73FB81B51C60A97300135D69 /* FSXMLHttpRequest.m in Sources */,
-				731119231C5F451400BA29DE /* VideoViewController.m in Sources */,
+				731119231C5F451400BA29DE /* MKAVPlayerViewController.m in Sources */,
 				73FB81971C60A95B00135D69 /* audio_queue.cpp in Sources */,
 				731119181C5F437E00BA29DE /* ViewController.m in Sources */,
 				73FB81991C60A95B00135D69 /* caching_stream.cpp in Sources */,
@@ -378,6 +387,7 @@
 				73FB81B41C60A97300135D69 /* FSPlaylistItem.m in Sources */,
 				731119361C5F598A00BA29DE /* AudioToolViewController.m in Sources */,
 				73FB819B1C60A95B00135D69 /* file_stream.cpp in Sources */,
+				737E33021C63483600398296 /* MoviePlayerViewController.m in Sources */,
 				73FB81B21C60A97300135D69 /* FSParsePlaylistRequest.m in Sources */,
 				731119051C5F434900BA29DE /* AppDelegate.m in Sources */,
 				731119331C5F596100BA29DE /* RecordViewController.m in Sources */,

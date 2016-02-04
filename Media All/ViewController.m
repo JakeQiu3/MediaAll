@@ -28,16 +28,16 @@
 }
 
 - (void)initData {
-    _dataArray = [[NSArray alloc] initWithObjects:@"audio（音效、音乐和录音）之音效",@"audio（音效、音乐和录音）之本地音乐",@"audio（音效、音乐和录音）之录音",@"audio（音效、音乐和录音）之多媒体音乐",@"audio（音效、音乐和录音）之音乐队列",@"video（视频）", nil];
-    _classArray = [[NSArray alloc] initWithObjects:@"AudioToolViewController",@"MusicViewController",@"HHHViewController",@"MediaMusicViewController",@"AudioQueueServicesViewController",@"VideoViewController", nil];
+    _dataArray = [[NSArray alloc] initWithObjects:@"audio（音效、音乐和录音）之音效",@"audio（音效、音乐和录音）之本地音乐",@"audio（音效、音乐和录音）之录音",@"audio（音效、音乐和录音）之多媒体音乐",@"audio（音效、音乐和录音）之音乐队列",@"video（视频播放）之 AVPlayer",@"video（视频播放）之 MPMoviePlayer控制器", nil];
+    _classArray = [[NSArray alloc] initWithObjects:@"AudioToolViewController",@"MusicViewController",@"HHHViewController",@"MediaMusicViewController",@"AudioQueueServicesViewController",@"MKAVPlayerViewController",@"MoviePlayerViewController", nil];
 }
 
 - (void)setUI {
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.backgroundColor = [UIColor whiteColor];
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
+    _tableView.delegate = (id)self;
+    _tableView.dataSource = (id)self;
     [self.view addSubview:_tableView];
     NSLog(@"少：self.view —> %@ \n tableview —> %@",NSStringFromCGRect(self.view.frame),NSStringFromCGRect(_tableView.frame));
 
