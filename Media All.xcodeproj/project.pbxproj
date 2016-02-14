@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		303D3F841C5FA3CD0083F275 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */; };
+		3051567A1C6F0772008C61ED /* MoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305156791C6F0772008C61ED /* MoviePlayerController.m */; };
 		731119021C5F434900BA29DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 731119011C5F434900BA29DE /* main.m */; };
 		731119051C5F434900BA29DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 731119041C5F434900BA29DE /* AppDelegate.m */; };
 		7311190B1C5F434900BA29DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731119091C5F434900BA29DE /* Main.storyboard */; };
@@ -52,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		305156781C6F0772008C61ED /* MoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerController.h; sourceTree = "<group>"; };
+		305156791C6F0772008C61ED /* MoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerController.m; sourceTree = "<group>"; };
 		731118FD1C5F434900BA29DE /* Media All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Media All.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		731119011C5F434900BA29DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		731119031C5F434900BA29DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				731119221C5F451400BA29DE /* MKAVPlayerViewController.m */,
 				737E33001C63483600398296 /* MoviePlayerViewController.h */,
 				737E33011C63483600398296 /* MoviePlayerViewController.m */,
+				305156781C6F0772008C61ED /* MoviePlayerController.h */,
+				305156791C6F0772008C61ED /* MoviePlayerController.m */,
 			);
 			name = "video（视频）";
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				73FB81981C60A95B00135D69 /* audio_stream.cpp in Sources */,
 				73FB81B51C60A97300135D69 /* FSXMLHttpRequest.m in Sources */,
 				731119231C5F451400BA29DE /* MKAVPlayerViewController.m in Sources */,
+				3051567A1C6F0772008C61ED /* MoviePlayerController.m in Sources */,
 				73FB81971C60A95B00135D69 /* audio_queue.cpp in Sources */,
 				731119181C5F437E00BA29DE /* ViewController.m in Sources */,
 				73FB81991C60A95B00135D69 /* caching_stream.cpp in Sources */,

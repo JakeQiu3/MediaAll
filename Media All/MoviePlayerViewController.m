@@ -7,12 +7,13 @@
 //
 
 #import "MoviePlayerViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
 @interface MoviePlayerViewController ()
-//@property (nonatomic, strong) MPMoviePlayerController *moviePlayerViewController;
+@property (nonatomic, strong) MPMoviePlayerViewController  *moviePlayerViewController;
 
 //播放器视图控制器
-@property (nonatomic, strong) AVPlayerViewController *moviePlayerViewController;
+//@property (nonatomic, strong) AVPlayerViewController *moviePlayerViewController;
 
 
 @end
@@ -21,20 +22,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUI];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"g" message:@"测试" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"播放视频测试" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alert show];
     
     // Do any additional setup after loading the view.
 }
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"------");
+    if (buttonIndex) {
+        [self setUI];
+        NSLog(@"------");
+    }
 }
 - (void)setUI {
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame = CGRectMake(100, 100, 50, 50);
     [btn setTitle:@"播放" forState:UIControlStateNormal];
-    
     [self.view addSubview:btn];
+    
 }
 /**
  *  取得本地文件路径
@@ -50,15 +55,15 @@
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
-- (AVPlayerViewController *)moviePlayerViewController {
+-(MPMoviePlayerViewController *)moviePlayerViewController{
     if (!_moviePlayerViewController) {
-      NSURL *url = [self getFileUrl];
-        _moviePlayerViewController = [[AVPlayerViewController  alloc] ini];
-        _moviePlayerViewController.
+        NSURL *url=[self getFileUrl];
+        _moviePlayerViewController=[[MPMoviePlayerViewController alloc]initWithContentURL:url];
         [self addNotification];
     }
     return _moviePlayerViewController;
 }
+
 /**
  *  添加通知监控媒体播放控制器状态
  */
@@ -73,7 +78,7 @@
  * 播放状态改变时，发布
  */
 - (void)mediaPlayerPlaybackStateChange:(NSNotification *)notification {
-    switch (self.moviePlayerViewController.playbackState) {
+    switch (self.moviePlayerViewController.moviePlayer.playbackState) {
         case MPMoviePlaybackStatePlaying:
               NSLog(@"正在播放...");
             break;
@@ -85,7 +90,7 @@
             break;
 
         default:
-             NSLog(@"播放状态:%li",self.moviePlayerViewController.playbackState);
+             NSLog(@"播放状态:%li",self.moviePlayerViewController.moviePlayer.playbackState);
             break;
     }
 }
@@ -96,21 +101,12 @@
  *  @param notification 通知对象
  */
 -(void)mediaPlayerPlaybackFinished:(NSNotification *)notification{
-    NSLog(@"播放完成.%li",self.moviePlayerViewController.playbackState);
+    NSLog(@"播放完成.%li",self.moviePlayerViewController.moviePlayer.playbackState);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
