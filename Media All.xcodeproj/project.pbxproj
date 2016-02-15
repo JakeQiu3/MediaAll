@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		303D3F841C5FA3CD0083F275 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */; };
 		3051567A1C6F0772008C61ED /* MoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305156791C6F0772008C61ED /* MoviePlayerController.m */; };
+		7306CEE91C71BFFD00293B71 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7306CEE81C71BFFD00293B71 /* MobileCoreServices.framework */; };
+		7306CEEF1C71C06300293B71 /* UIImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7306CEEE1C71C06300293B71 /* UIImagePickerViewController.m */; };
+		7306CEF31C71D02400293B71 /* UIImagePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7306CEF21C71D02400293B71 /* UIImagePickerViewController.storyboard */; };
+		7306CEF61C71D7C600293B71 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7306CEF51C71D7C600293B71 /* FirstViewController.m */; };
 		731119021C5F434900BA29DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 731119011C5F434900BA29DE /* main.m */; };
 		731119051C5F434900BA29DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 731119041C5F434900BA29DE /* AppDelegate.m */; };
 		7311190B1C5F434900BA29DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731119091C5F434900BA29DE /* Main.storyboard */; };
@@ -55,6 +59,12 @@
 		303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		305156781C6F0772008C61ED /* MoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerController.h; sourceTree = "<group>"; };
 		305156791C6F0772008C61ED /* MoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerController.m; sourceTree = "<group>"; };
+		7306CEE81C71BFFD00293B71 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7306CEED1C71C06300293B71 /* UIImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImagePickerViewController.h; sourceTree = "<group>"; };
+		7306CEEE1C71C06300293B71 /* UIImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImagePickerViewController.m; sourceTree = "<group>"; };
+		7306CEF21C71D02400293B71 /* UIImagePickerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UIImagePickerViewController.storyboard; sourceTree = "<group>"; };
+		7306CEF41C71D7C600293B71 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		7306CEF51C71D7C600293B71 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		731118FD1C5F434900BA29DE /* Media All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Media All.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		731119011C5F434900BA29DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		731119031C5F434900BA29DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7306CEE91C71BFFD00293B71 /* MobileCoreServices.framework in Frameworks */,
 				737E33041C6358C600398296 /* AVKit.framework in Frameworks */,
 				73FB817E1C60A8EE00135D69 /* CFNetwork.framework in Frameworks */,
 				303D3F841C5FA3CD0083F275 /* MediaPlayer.framework in Frameworks */,
@@ -147,6 +158,7 @@
 		731118F41C5F434900BA29DE = {
 			isa = PBXGroup;
 			children = (
+				7306CEE81C71BFFD00293B71 /* MobileCoreServices.framework */,
 				737E33031C6358C600398296 /* AVKit.framework */,
 				73FB817D1C60A8EE00135D69 /* CFNetwork.framework */,
 				303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */,
@@ -175,7 +187,7 @@
 				731119171C5F437E00BA29DE /* ViewController.m */,
 				7311191B1C5F44D800BA29DE /* audio（音效、音乐和录音） */,
 				7311191C1C5F44E100BA29DE /* video（视频） */,
-				7311191D1C5F44E700BA29DE /* photography（拍照） */,
+				7311191D1C5F44E700BA29DE /* photography（调用系统相机） */,
 				731119001C5F434900BA29DE /* Supporting Files */,
 			);
 			path = "Media All";
@@ -227,13 +239,18 @@
 			name = "video（视频）";
 			sourceTree = "<group>";
 		};
-		7311191D1C5F44E700BA29DE /* photography（拍照） */ = {
+		7311191D1C5F44E700BA29DE /* photography（调用系统相机） */ = {
 			isa = PBXGroup;
 			children = (
+				7306CEF41C71D7C600293B71 /* FirstViewController.h */,
+				7306CEF51C71D7C600293B71 /* FirstViewController.m */,
+				7306CEED1C71C06300293B71 /* UIImagePickerViewController.h */,
+				7306CEEE1C71C06300293B71 /* UIImagePickerViewController.m */,
+				7306CEF21C71D02400293B71 /* UIImagePickerViewController.storyboard */,
 				731119241C5F452200BA29DE /* PhotoGraphyViewController.h */,
 				731119251C5F452200BA29DE /* PhotoGraphyViewController.m */,
 			);
-			name = "photography（拍照）";
+			name = "photography（调用系统相机）";
 			sourceTree = "<group>";
 		};
 		7311193C1C5F616100BA29DE /* Resource */ = {
@@ -358,6 +375,7 @@
 				731119381C5F5D5300BA29DE /* msgTritone.caf in Resources */,
 				731119301C5F593A00BA29DE /* 声音大全.xml in Resources */,
 				7311190D1C5F434900BA29DE /* Assets.xcassets in Resources */,
+				7306CEF31C71D02400293B71 /* UIImagePickerViewController.storyboard in Resources */,
 				7311193E1C5F618400BA29DE /* 刘若英 - 原来你也在这里.mp3 in Resources */,
 				7311190B1C5F434900BA29DE /* Main.storyboard in Resources */,
 			);
@@ -376,6 +394,7 @@
 				73FB81B51C60A97300135D69 /* FSXMLHttpRequest.m in Sources */,
 				731119231C5F451400BA29DE /* MKAVPlayerViewController.m in Sources */,
 				3051567A1C6F0772008C61ED /* MoviePlayerController.m in Sources */,
+				7306CEEF1C71C06300293B71 /* UIImagePickerViewController.m in Sources */,
 				73FB81971C60A95B00135D69 /* audio_queue.cpp in Sources */,
 				731119181C5F437E00BA29DE /* ViewController.m in Sources */,
 				73FB81991C60A95B00135D69 /* caching_stream.cpp in Sources */,
@@ -392,6 +411,7 @@
 				73FB819A1C60A95B00135D69 /* file_output.cpp in Sources */,
 				73FB81B41C60A97300135D69 /* FSPlaylistItem.m in Sources */,
 				731119361C5F598A00BA29DE /* AudioToolViewController.m in Sources */,
+				7306CEF61C71D7C600293B71 /* FirstViewController.m in Sources */,
 				73FB819B1C60A95B00135D69 /* file_stream.cpp in Sources */,
 				737E33021C63483600398296 /* MoviePlayerViewController.m in Sources */,
 				73FB81B21C60A97300135D69 /* FSParsePlaylistRequest.m in Sources */,
@@ -513,6 +533,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
 				INFOPLIST_FILE = "Media All/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.qsy.Media-All";
@@ -526,6 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
 				INFOPLIST_FILE = "Media All/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.qsy.Media-All";

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Image Picker View Controller-->
+        <scene sceneID="FIb-DL-yRQ">
+            <objects>
+                <viewController storyboardIdentifier="UIImagePickerViewController" id="1cp-Sm-zZC" customClass="UIImagePickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bLW-yC-ALA"/>
+                        <viewControllerLayoutGuide type="bottom" id="hME-Sm-O1a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yWd-Pa-Mn4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pWh-Me-uBS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="424"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_tabBar_bg" translatesAutoresizingMaskIntoConstraints="NO" id="DL5-rP-cHM">
+                                <rect key="frame" x="0.0" y="472" width="600" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="rf4-eO-DMR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyJ-3o-qNY">
+                                <rect key="frame" x="264" y="499" width="73" height="73"/>
+                                <state key="normal" image="icon_facial_btn_take" backgroundImage="sc_btn_take"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="1cp-Sm-zZC" eventType="touchUpInside" id="tCC-L9-NLC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DL5-rP-cHM" firstAttribute="top" secondItem="pWh-Me-uBS" secondAttribute="bottom" constant="48" id="A7P-vy-4en"/>
+                            <constraint firstItem="pWh-Me-uBS" firstAttribute="top" secondItem="yWd-Pa-Mn4" secondAttribute="top" id="H7h-8D-AnT"/>
+                            <constraint firstItem="DL5-rP-cHM" firstAttribute="trailing" secondItem="pWh-Me-uBS" secondAttribute="trailing" id="O9e-GY-OLG"/>
+                            <constraint firstItem="pWh-Me-uBS" firstAttribute="leading" secondItem="yWd-Pa-Mn4" secondAttribute="leading" id="Vke-5f-ml3"/>
+                            <constraint firstAttribute="trailing" secondItem="pWh-Me-uBS" secondAttribute="trailing" id="WHA-YZ-CNY"/>
+                            <constraint firstItem="DL5-rP-cHM" firstAttribute="centerX" secondItem="pyJ-3o-qNY" secondAttribute="centerX" id="byf-5u-Ox0"/>
+                            <constraint firstItem="DL5-rP-cHM" firstAttribute="centerY" secondItem="pyJ-3o-qNY" secondAttribute="centerY" id="gXq-jQ-1hv"/>
+                            <constraint firstItem="DL5-rP-cHM" firstAttribute="bottom" secondItem="hME-Sm-O1a" secondAttribute="top" id="jr2-HV-q12"/>
+                            <constraint firstItem="DL5-rP-cHM" firstAttribute="leading" secondItem="yWd-Pa-Mn4" secondAttribute="leading" id="ntE-YX-kWt"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="photo" destination="pWh-Me-uBS" id="REc-8m-YhP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5Y-MX-zcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="330" y="313"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_tabBar_bg" width="20" height="20"/>
+        <image name="icon_facial_btn_take" width="31" height="31"/>
+        <image name="sc_btn_take" width="73" height="73"/>
+    </resources>
+</document>
