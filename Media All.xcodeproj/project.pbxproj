@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301C5DA11C7219C700050DAB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301C5DA01C7219C700050DAB /* AssetsLibrary.framework */; };
 		303D3F841C5FA3CD0083F275 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */; };
 		3051567A1C6F0772008C61ED /* MoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305156791C6F0772008C61ED /* MoviePlayerController.m */; };
 		7306CEE91C71BFFD00293B71 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7306CEE81C71BFFD00293B71 /* MobileCoreServices.framework */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		301C5DA01C7219C700050DAB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		305156781C6F0772008C61ED /* MoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerController.h; sourceTree = "<group>"; };
 		305156791C6F0772008C61ED /* MoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerController.m; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301C5DA11C7219C700050DAB /* AssetsLibrary.framework in Frameworks */,
 				7306CEE91C71BFFD00293B71 /* MobileCoreServices.framework in Frameworks */,
 				737E33041C6358C600398296 /* AVKit.framework in Frameworks */,
 				73FB817E1C60A8EE00135D69 /* CFNetwork.framework in Frameworks */,
@@ -155,9 +158,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		301C5D9E1C72192800050DAB /* 录音 */ = {
+			isa = PBXGroup;
+			children = (
+				7358231F1C60719400C42383 /* HHHViewController.h */,
+				7358231D1C60718D00C42383 /* HHHViewController.m */,
+				731119311C5F596100BA29DE /* RecordViewController.h */,
+				731119321C5F596100BA29DE /* RecordViewController.m */,
+				735823221C607EB200C42383 /* RecordViewController.storyboard */,
+			);
+			name = "录音";
+			sourceTree = "<group>";
+		};
+		301C5D9F1C72195400050DAB /* 录像和拍照 */ = {
+			isa = PBXGroup;
+			children = (
+				7306CEF41C71D7C600293B71 /* FirstViewController.h */,
+				7306CEF51C71D7C600293B71 /* FirstViewController.m */,
+				7306CEED1C71C06300293B71 /* UIImagePickerViewController.h */,
+				7306CEEE1C71C06300293B71 /* UIImagePickerViewController.m */,
+				7306CEF21C71D02400293B71 /* UIImagePickerViewController.storyboard */,
+			);
+			name = "录像和拍照";
+			sourceTree = "<group>";
+		};
 		731118F41C5F434900BA29DE = {
 			isa = PBXGroup;
 			children = (
+				301C5DA01C7219C700050DAB /* AssetsLibrary.framework */,
 				7306CEE81C71BFFD00293B71 /* MobileCoreServices.framework */,
 				737E33031C6358C600398296 /* AVKit.framework */,
 				73FB817D1C60A8EE00135D69 /* CFNetwork.framework */,
@@ -213,11 +241,7 @@
 				731119351C5F598A00BA29DE /* AudioToolViewController.m */,
 				731119391C5F60F000BA29DE /* MusicViewController.h */,
 				7311193A1C5F60F000BA29DE /* MusicViewController.m */,
-				7358231F1C60719400C42383 /* HHHViewController.h */,
-				7358231D1C60718D00C42383 /* HHHViewController.m */,
-				731119311C5F596100BA29DE /* RecordViewController.h */,
-				731119321C5F596100BA29DE /* RecordViewController.m */,
-				735823221C607EB200C42383 /* RecordViewController.storyboard */,
+				301C5D9E1C72192800050DAB /* 录音 */,
 				735823241C6087F300C42383 /* MediaMusicViewController.h */,
 				735823251C6087F300C42383 /* MediaMusicViewController.m */,
 				73FB81B61C60A98F00135D69 /* AudioQueueServicesViewController.h */,
@@ -242,11 +266,7 @@
 		7311191D1C5F44E700BA29DE /* photography（调用系统相机） */ = {
 			isa = PBXGroup;
 			children = (
-				7306CEF41C71D7C600293B71 /* FirstViewController.h */,
-				7306CEF51C71D7C600293B71 /* FirstViewController.m */,
-				7306CEED1C71C06300293B71 /* UIImagePickerViewController.h */,
-				7306CEEE1C71C06300293B71 /* UIImagePickerViewController.m */,
-				7306CEF21C71D02400293B71 /* UIImagePickerViewController.storyboard */,
+				301C5D9F1C72195400050DAB /* 录像和拍照 */,
 				731119241C5F452200BA29DE /* PhotoGraphyViewController.h */,
 				731119251C5F452200BA29DE /* PhotoGraphyViewController.m */,
 			);

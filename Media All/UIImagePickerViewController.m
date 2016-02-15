@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 @interface UIImagePickerViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
-@property (nonatomic, assign) int isVideo;//是否录制视频，如果为1表示录制视频，0代表拍照
+
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
 
 @property (nonatomic, weak)IBOutlet UIImageView *photo;
@@ -23,8 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _isVideo = 1;
-    // Do any additional setup after loading the view.
 }
 //获取图片拾取器
 - (UIImagePickerController *)imagePicker {

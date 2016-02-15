@@ -16,14 +16,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(100, 100, 200, 30);
-    [btn setTitle:@"录像和照相" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(wo) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+    UISegmentedControl *segentControl = [[UISegmentedControl alloc] initWithItems:@[@"录像",@"照相"]];
+//    segentControl.selectedSegmentIndex = 0;
+    segentControl.apportionsSegmentWidthsByContent = YES;
+    segentControl.tintColor = [UIColor blueColor];
+    segentControl.frame = CGRectMake(100, 100, 120, 30);
+    [segentControl addTarget:self action:@selector(chooseCamera:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:segentControl];
 }
 
+- (void)chooseCamera:(UISegmentedControl *)segementControl {
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"UIImagePickerViewController" bundle:nil];
+    UIImagePickerViewController *imagePickerVC = [story instantiateViewControllerWithIdentifier:@"UIImagePickerViewController"];
+    [self.navigationController pushViewController:imagePickerVC animated:YES];
+    switch (segementControl.selectedSegmentIndex) {
+        case 0:
+            imagePickerVC.isVideo = 1;
+            break;
+            
+        default:
+            break;
+    }
+}
 - (void)wo {
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"UIImagePickerViewController" bundle:nil];
     UIImagePickerViewController *v = [story instantiateViewControllerWithIdentifier:@"UIImagePickerViewController"];
