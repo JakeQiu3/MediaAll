@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoGraphyViewController : UIViewController
+@interface VideoCutPhotoViewController : UIViewController
 
 @end

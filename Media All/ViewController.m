@@ -28,8 +28,8 @@
 }
 
 - (void)initData {
-    _dataArray = [[NSArray alloc] initWithObjects:@"audio（音效、音乐和录音）之音效",@"audio（音效、音乐和录音）之本地音乐",@"audio（音效、音乐和录音）之录音",@"audio（音效、音乐和录音）之多媒体音乐",@"audio（音效、音乐和录音）之音乐队列",@"video（视频播放）之 AVPlayer",@"video（视频播放）之 MPMoviePlayer视图控制器",@"video（视频播放）之 MPMoviePlayer控制器", @"photography（调用系统相机）之录像和拍照",@"",nil];
-    _classArray = [[NSArray alloc] initWithObjects:@"AudioToolViewController",@"MusicViewController",@"HHHViewController",@"MediaMusicViewController",@"AudioQueueServicesViewController",@"MKAVPlayerViewController",@"MoviePlayerViewController",@"MoviePlayerController",@"FirstViewController", @"",nil];
+    _dataArray = [[NSArray alloc] initWithObjects:@"audio（音效、音乐和录音）之音效",@"audio（音效、音乐和录音）之本地音乐",@"audio（音效、音乐和录音）之录音",@"audio（音效、音乐和录音）之多媒体音乐",@"audio（音效、音乐和录音）之音乐队列",@"video（视频播放）之 AVPlayer",@"video（视频播放）之 MPMoviePlayer视图控制器",@"video（视频播放）之 MPMoviePlayer控制器", @"photography（调用系统相机）之录像和拍照",@"photography（调用系统相机）之截取指定时间的视频缩略图",@"",nil];
+    _classArray = [[NSArray alloc] initWithObjects:@"AudioToolViewController",@"MusicViewController",@"HHHViewController",@"MediaMusicViewController",@"AudioQueueServicesViewController",@"MKAVPlayerViewController",@"MoviePlayerViewController",@"MoviePlayerController",@"FirstViewController", @"VideoCutPhotoViewController",@"",nil];
 }
 
 - (void)setUI {
