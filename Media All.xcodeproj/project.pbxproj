@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		301C5DA11C7219C700050DAB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301C5DA01C7219C700050DAB /* AssetsLibrary.framework */; };
+		30346D6A1C74C84100E9D55C /* AVFoundationCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30346D681C74C84100E9D55C /* AVFoundationCameraViewController.m */; };
+		30346D6B1C74C84100E9D55C /* AVFoundationCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30346D691C74C84100E9D55C /* AVFoundationCameraViewController.xib */; };
 		303D3F841C5FA3CD0083F275 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */; };
 		3051567A1C6F0772008C61ED /* MoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305156791C6F0772008C61ED /* MoviePlayerController.m */; };
 		7306CEE91C71BFFD00293B71 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7306CEE81C71BFFD00293B71 /* MobileCoreServices.framework */; };
@@ -58,6 +60,9 @@
 
 /* Begin PBXFileReference section */
 		301C5DA01C7219C700050DAB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		30346D671C74C84100E9D55C /* AVFoundationCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVFoundationCameraViewController.h; sourceTree = "<group>"; };
+		30346D681C74C84100E9D55C /* AVFoundationCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVFoundationCameraViewController.m; sourceTree = "<group>"; };
+		30346D691C74C84100E9D55C /* AVFoundationCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AVFoundationCameraViewController.xib; sourceTree = "<group>"; };
 		303D3F831C5FA3CD0083F275 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		305156781C6F0772008C61ED /* MoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerController.h; sourceTree = "<group>"; };
 		305156791C6F0772008C61ED /* MoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerController.m; sourceTree = "<group>"; };
@@ -182,6 +187,16 @@
 			name = "录像和拍照";
 			sourceTree = "<group>";
 		};
+		30346D6C1C74C84800E9D55C /* 视频截图 */ = {
+			isa = PBXGroup;
+			children = (
+				30346D671C74C84100E9D55C /* AVFoundationCameraViewController.h */,
+				30346D681C74C84100E9D55C /* AVFoundationCameraViewController.m */,
+				30346D691C74C84100E9D55C /* AVFoundationCameraViewController.xib */,
+			);
+			name = "视频截图";
+			sourceTree = "<group>";
+		};
 		30EEEE641C736C1500E9379C /* 截取指定时间的视频缩略图 */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +292,7 @@
 			children = (
 				301C5D9F1C72195400050DAB /* 录像和拍照 */,
 				30EEEE641C736C1500E9379C /* 截取指定时间的视频缩略图 */,
+				30346D6C1C74C84800E9D55C /* 视频截图 */,
 			);
 			name = "photography（调用系统相机）";
 			sourceTree = "<group>";
@@ -399,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				735823231C607EB200C42383 /* RecordViewController.storyboard in Resources */,
+				30346D6B1C74C84100E9D55C /* AVFoundationCameraViewController.xib in Resources */,
 				731119101C5F434900BA29DE /* LaunchScreen.storyboard in Resources */,
 				731119381C5F5D5300BA29DE /* msgTritone.caf in Resources */,
 				731119301C5F593A00BA29DE /* 声音大全.xml in Resources */,
@@ -420,6 +437,7 @@
 				7311193B1C5F60F000BA29DE /* MusicViewController.m in Sources */,
 				73FB81981C60A95B00135D69 /* audio_stream.cpp in Sources */,
 				73FB81B51C60A97300135D69 /* FSXMLHttpRequest.m in Sources */,
+				30346D6A1C74C84100E9D55C /* AVFoundationCameraViewController.m in Sources */,
 				731119231C5F451400BA29DE /* MKAVPlayerViewController.m in Sources */,
 				3051567A1C6F0772008C61ED /* MoviePlayerController.m in Sources */,
 				7306CEEF1C71C06300293B71 /* UIImagePickerViewController.m in Sources */,
