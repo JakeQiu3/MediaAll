@@ -4,7 +4,6 @@
 //
 //  Created by qsyMac on 16/2/17.
 //  Copyright © 2016年 QSY. All rights reserved.
-//
 
 #import "AVFoundationCameraViewController.h"
 
