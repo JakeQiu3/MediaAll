@@ -10,7 +10,7 @@
 @interface AVFoundationCameraViewController ()
 
 @end
-
+// 读书不落地址 http://buluo.qq.com/p/barindex.html?bid=268541
 @implementation AVFoundationCameraViewController
 
 - (void)viewDidLoad {
