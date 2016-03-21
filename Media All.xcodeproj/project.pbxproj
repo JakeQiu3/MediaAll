@@ -59,6 +59,7 @@
 		735823261C6087F300C42383 /* MediaMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735823251C6087F300C42383 /* MediaMusicViewController.m */; };
 		737E33021C63483600398296 /* MoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E33011C63483600398296 /* MoviePlayerViewController.m */; };
 		737E33041C6358C600398296 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737E33031C6358C600398296 /* AVKit.framework */; };
+		73EBF05A1C9FA5D300399BC2 /* 书.xml in Resources */ = {isa = PBXBuildFile; fileRef = 73EBF0591C9FA5D300399BC2 /* 书.xml */; };
 		73FB817E1C60A8EE00135D69 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73FB817D1C60A8EE00135D69 /* CFNetwork.framework */; };
 		73FB81831C60A94C00135D69 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FB81821C60A94C00135D69 /* Reachability.m */; };
 		73FB81971C60A95B00135D69 /* audio_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73FB81851C60A95B00135D69 /* audio_queue.cpp */; };
@@ -186,6 +187,7 @@
 		737E33001C63483600398296 /* MoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerViewController.h; sourceTree = "<group>"; };
 		737E33011C63483600398296 /* MoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerViewController.m; sourceTree = "<group>"; };
 		737E33031C6358C600398296 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		73EBF0591C9FA5D300399BC2 /* 书.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "书.xml"; sourceTree = "<group>"; };
 		73FB817D1C60A8EE00135D69 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		73FB81811C60A94C00135D69 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		73FB81821C60A94C00135D69 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				735823251C6087F300C42383 /* MediaMusicViewController.m */,
 				73FB81B61C60A98F00135D69 /* AudioQueueServicesViewController.h */,
 				73FB81B71C60A98F00135D69 /* AudioQueueServicesViewController.m */,
+				73EBF0591C9FA5D300399BC2 /* 书.xml */,
 			);
 			name = "audio（音效、音乐和录音）";
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				306E0D901C9EFDAF005D8E0C /* Images.xcassets in Resources */,
 				7306CEF31C71D02400293B71 /* UIImagePickerViewController.storyboard in Resources */,
 				7311193E1C5F618400BA29DE /* 刘若英 - 原来你也在这里.mp3 in Resources */,
+				73EBF05A1C9FA5D300399BC2 /* 书.xml in Resources */,
 				7311190B1C5F434900BA29DE /* Main.storyboard in Resources */,
 				306E0D961C9EFDAF005D8E0C /* Info.plist in Resources */,
 			);
