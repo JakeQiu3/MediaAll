@@ -424,8 +424,6 @@
 			isa = PBXGroup;
 			children = (
 				7311190E1C5F434900BA29DE /* LaunchScreen.storyboard */,
-				306E0D551C9EFDAF005D8E0C /* AVFoundationCamera */,
-				306E0D6B1C9EFDAF005D8E0C /* AVFoundationCameraRecording */,
 				731119111C5F434900BA29DE /* Info.plist */,
 				7311190C1C5F434900BA29DE /* Assets.xcassets */,
 				731119091C5F434900BA29DE /* Main.storyboard */,
@@ -468,6 +466,8 @@
 		7311191D1C5F44E700BA29DE /* photography（调用系统相机） */ = {
 			isa = PBXGroup;
 			children = (
+				306E0D551C9EFDAF005D8E0C /* AVFoundationCamera */,
+				306E0D6B1C9EFDAF005D8E0C /* AVFoundationCameraRecording */,
 				301C5D9F1C72195400050DAB /* 录像和拍照 */,
 				30EEEE641C736C1500E9379C /* 截取指定时间的视频缩略图 */,
 				30346D6C1C74C84800E9D55C /* 视频截图 */,
